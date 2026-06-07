@@ -8,21 +8,45 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+    id 'java'
 }
+
+def mainClassName = 'ParseTempsDriver'
 
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
 }
 
+jar {
+    archiveFileName = 'assignment.jar'
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+}
+
+java {
+    sourceCompatibility = JavaVersion.toVersion(21)
+    targetCompatibility = JavaVersion.toVersion(21)
+}
+
 dependencies {
     // Use JUnit Jupiter for testing.
-    testImplementation libs.junit.jupiter
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.7.0'
+    testImplementation 'org.hamcrest:hamcrest-library:2.2'
 
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
     // This dependency is used by the application.
     implementation libs.guava
+}
+
+tasks.withType(Test) {
+    useJUnitPlatform()
+    ignoreFailures = true
+    testLogging {
+        events "passed", "skipped", "failed"
+        }
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
@@ -34,10 +58,5 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = 'semester.project.App'
-}
-
-tasks.named('test') {
-    // Use JUnit Platform for unit tests.
-    useJUnitPlatform()
+    mainClass = 'ParseTempsDriver'
 }

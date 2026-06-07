@@ -11,7 +11,7 @@ plugins {
     id 'java'
 }
 
-def mainClassName = 'ParseTempsDriver'
+def mainClassName = 'main.java.project.Main'
 
 repositories {
     // Use Maven Central for resolving dependencies.
@@ -58,5 +58,5 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = 'ParseTempsDriver'
+    mainClass = 'main.java.project.Main'
 }

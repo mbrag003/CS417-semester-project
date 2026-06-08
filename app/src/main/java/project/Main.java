@@ -17,16 +17,22 @@ public class Main {
      * @param args
      */
     public static void main(String[] args) {
-
+        
         BufferedReader tFileStream = parseTempsFile(args);
 
-        // Parse the temperature file and store the readings in a list of CoreTempReading objects. Code adapted from ParseTempsDriver.java from the CS417 semester project repository.
-        List<CoreTempReading> allTheTemps = parseRawTemps(tFileStream);
+        if (tFileStream == null) {
+            return;
+        }
+        else {
 
-        //Store the readings in arrays and print the contents of each array.
-        TemperatureArray temperatureArray = new TemperatureArray(allTheTemps);
-        temperatureArray.populateArrays();
-        temperatureArray.printArrays();
+            // Parse the temperature file and store the readings in a list of CoreTempReading objects. Code adapted from ParseTempsDriver.java from the CS417 semester project repository.
+            List<CoreTempReading> allTheTemps = parseRawTemps(tFileStream);
+
+            //Store the readings in arrays and print the contents of each array.
+            TemperatureArray temperatureArray = new TemperatureArray(allTheTemps);
+            temperatureArray.populateArrays();
+            temperatureArray.printArrays();
+        }
 
 
     }
@@ -44,10 +50,10 @@ public class Main {
             tFileStream = new BufferedReader(new FileReader(new File(args[0])));
         }
         catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Please provide a filename as a command line argument.");
+            System.out.println("Error: Please provide a filename as a command line argument.");
         }
         catch (FileNotFoundException e) {
-            System.out.println("The file cannot be found. Please check the file name and try again.");
+            System.out.println("Error: The file cannot be found. Please check the file name and try again.");
         }
 
         return tFileStream;

@@ -23,9 +23,10 @@ public class Main {
         // Parse the temperature file and store the readings in a list of CoreTempReading objects. Code adapted from ParseTempsDriver.java from the CS417 semester project repository.
         List<CoreTempReading> allTheTemps = parseRawTemps(tFileStream);
 
-        for (CoreTempReading aReading : allTheTemps) {
-            System.out.println(aReading);
-        }
+        //Store the readings in arrays and print the contents of each array.
+        TemperatureArray temperatureArray = new TemperatureArray(allTheTemps);
+        temperatureArray.populateArrays();
+        temperatureArray.printArrays();
 
 
     }

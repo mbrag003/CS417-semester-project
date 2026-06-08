@@ -54,14 +54,12 @@ public class TemperatureArray {
     }
 
     /***
-     * Prints the contents of each array.
+     * Prints the readings for each core for a given time. 
      */
     public void printArrays() {
-        System.out.println("Times: " + java.util.Arrays.toString(times));
-        System.out.println("Core 0 Readings: " + java.util.Arrays.toString(readings_core_0));
-        System.out.println("Core 1 Readings: " + java.util.Arrays.toString(readings_core_1));
-        System.out.println("Core 2 Readings: " + java.util.Arrays.toString(readings_core_2));
-        System.out.println("Core 3 Readings: " + java.util.Arrays.toString(readings_core_3));
+        for (int i = 0; i < numberOfReadings; i++) {
+            System.out.println("Time: " + times[i] + " Core 0: " + readings_core_0[i] + " Core 1: " + readings_core_1[i] + " Core 2: " + readings_core_2[i] + " Core 3: " + readings_core_3[i]);
+        }
     }
 
 

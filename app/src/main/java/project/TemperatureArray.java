@@ -13,7 +13,7 @@ import edu.odu.cs.cs417.TemperatureParser.CoreTempReading;
 public class TemperatureArray {
 
     private int numberOfReadings;
-    List<CoreTempReading> readings;
+    private List<CoreTempReading> readings;
 
 
     // Arrays to store the temperature readings for each core. Code adapted from Example 2 in Semester Project - Input Library and Language Selection on canvas.
@@ -38,6 +38,62 @@ public class TemperatureArray {
         this.readings_core_3 = new double[numberOfReadings];
     }
 
+    /***
+     * Returns the list of CoreTempReading objects.
+     * @return the list of CoreTempReading objects
+     */
+    public List<CoreTempReading> getReadings() {
+        return readings;
+    }
+
+    /***
+     * Returns the number of readings in the list of CoreTemperatureReading objects.
+     * @return the number of readings
+     */
+    public int getNumberOfReadings() {
+        return numberOfReadings;
+    }
+
+    /***
+     * Returns the array of time steps for each reading.
+     * @return the array of time steps
+     */
+    public int[] getTimes() {
+        return times;
+    }
+
+
+    /***
+     * Returns the array of temperature readings for core 0.
+     * @return the array of temperature readings for core 0
+     */
+    public double[] getReadings_core_0() {
+        return readings_core_0;
+    }
+
+    /***
+     * Returns the array of temperature readings for core 1.
+     * @return the array of temperature readings for core 1
+     */
+    public double[] getReadings_core_1() {
+        return readings_core_1;
+    }
+
+    /***
+     * Returns the array of temperature readings for core 2.
+     * @return the array of temperature readings for core 2
+     */
+    public double[] getReadings_core_2() {
+        return readings_core_2;
+    }
+
+    /***
+     * Returns the array of temperature readings for core 3.
+     * @return the array of temperature readings for core 3
+     */
+    public double[] getReadings_core_3() {
+        return readings_core_3;
+    }
 
     /***
      * Populates the arrays for each core with temperature readings from the list of core temperature readings. Code adapted from ParseTempsDriver.java from the CS417 semester project repository.

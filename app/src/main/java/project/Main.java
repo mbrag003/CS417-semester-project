@@ -1,4 +1,4 @@
-package main.java.project;
+package project;
 
 import java.util.List;
 import java.io.BufferedReader;

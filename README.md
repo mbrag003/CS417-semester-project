@@ -25,17 +25,14 @@ If run using
 java -jar app/build/libs/assignment.jar app/src/test/resources/sample-input.txt
 ```
 
-output *similar* to 
+4 output files will be displayed, one being sample-input-core-00.txt. It will contain test *similar* to:
 
 ```
-Time: 0 Core 0: 61.0 Core 1: 63.0 Core 2: 50.0 Core 3: 58.0
-Time: 30 Core 0: 80.0 Core 1: 81.0 Core 2: 68.0 Core 3: 77.0
-Time: 60 Core 0: 62.0 Core 1: 63.0 Core 2: 52.0 Core 3: 60.0
-Time: 90 Core 0: 83.0 Core 1: 82.0 Core 2: 70.0 Core 3: 79.0
-Time: 120 Core 0: 68.0 Core 1: 69.0 Core 2: 58.0 Core 3: 65.0
-```
-
-will be displayed. 
+       0 <= x <=       30 ; y =      61.0000 +       0.6333 x ; interpolation
+      30 <= x <=       60 ; y =      98.0000 +      -0.6000 x ; interpolation
+      60 <= x <=       90 ; y =      20.0000 +       0.7000 x ; interpolation
+      90 <= x <=      120 ; y =     128.0000 +      -0.5000 x ; interpolation
+``` 
 
 Note: If run using a file that does not exist or cannot be found, the following error message will be displayed.
 

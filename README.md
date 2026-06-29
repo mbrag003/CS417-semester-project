@@ -25,7 +25,7 @@ If run using
 java -jar app/build/libs/assignment.jar app/src/test/resources/sample-input.txt
 ```
 
-4 output files will be created, one being sample-input-core-00.txt. It will contain test *similar* to:
+4 output files will be created, one being sample-input-core-00.txt. It will contain text *similar* to:
 
 ```
        0 <= x <=       30 ; y =      61.0000 +       0.6333 x ; interpolation

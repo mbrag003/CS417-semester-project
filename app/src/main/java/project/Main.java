@@ -1,6 +1,9 @@
 package project;
 
 import java.util.List;
+
+import edu.odu.cs.cs417.TemperatureParser.CoreTempReading;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -28,11 +31,26 @@ public class Main {
             // Parse the temperature file and store the readings in a list of CoreTempReading objects. Code adapted from ParseTempsDriver.java from the CS417 semester project repository.
             List<CoreTempReading> allTheTemps = parseRawTemps(tFileStream);
 
-            //Store the readings in arrays and print the contents of each array.
+            //Store the readings in arrays.
             TemperatureArray temperatureArray = new TemperatureArray(allTheTemps);
             temperatureArray.populateArrays();
-            temperatureArray.printArrays();
-        }
+            
+            //Print the output file for core 0.
+            PiecewiseLinearInterpolation piecewiseLinearInterpolation0 = new PiecewiseLinearInterpolation(temperatureArray.getReadings_core_0(), temperatureArray.getTimes(), args[0], 0);
+            piecewiseLinearInterpolation0.writeOutputFile();
+
+            //Print the output file for core 1.
+            PiecewiseLinearInterpolation piecewiseLinearInterpolation1 = new PiecewiseLinearInterpolation(temperatureArray.getReadings_core_1(), temperatureArray.getTimes(), args[0], 1);
+            piecewiseLinearInterpolation1.writeOutputFile();
+
+            //Print the output file for core 2.
+            PiecewiseLinearInterpolation piecewiseLinearInterpolation2 = new PiecewiseLinearInterpolation(temperatureArray.getReadings_core_2(), temperatureArray.getTimes(), args[0], 2);
+            piecewiseLinearInterpolation2.writeOutputFile();
+
+            //Print the output file for core 3.
+            PiecewiseLinearInterpolation piecewiseLinearInterpolation3 = new PiecewiseLinearInterpolation(temperatureArray.getReadings_core_3(), temperatureArray.getTimes(), args[0], 3);
+            piecewiseLinearInterpolation3.writeOutputFile();
+        }   
 
 
     }

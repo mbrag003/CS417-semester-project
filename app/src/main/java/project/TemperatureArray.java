@@ -17,7 +17,7 @@ public class TemperatureArray {
 
 
     // Arrays to store the temperature readings for each core. Code adapted from Example 2 in Semester Project - Input Library and Language Selection on canvas.
-    private int[] times;
+    private double[] times;
     private double[] readings_core_0;
     private double[] readings_core_1;
     private double[] readings_core_2;
@@ -31,7 +31,7 @@ public class TemperatureArray {
     public TemperatureArray(List<CoreTempReading> readings) {
         this.readings = readings;
         this.numberOfReadings = readings.size();
-        this.times = new int[numberOfReadings];
+        this.times = new double[numberOfReadings];
         this.readings_core_0 = new double[numberOfReadings];
         this.readings_core_1 = new double[numberOfReadings];
         this.readings_core_2 = new double[numberOfReadings];
@@ -58,7 +58,7 @@ public class TemperatureArray {
      * Returns the array of time steps for each reading.
      * @return the array of time steps
      */
-    public int[] getTimes() {
+    public double[] getTimes() {
         return times;
     }
 

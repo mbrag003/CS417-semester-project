@@ -2,8 +2,6 @@ package project;
 
 import java.util.List;
 
-import edu.odu.cs.cs417.TemperatureParser.CoreTempReading;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
